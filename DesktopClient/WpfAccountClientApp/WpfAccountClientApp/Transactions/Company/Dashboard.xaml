@@ -24,6 +24,11 @@
             <MenuItem Header="Transactions" FontFamily="Century Gothic" FontSize="12" FontWeight="SemiBold" BorderThickness="2" Background="#FFAAD7F0" Foreground="#FF191964" VerticalAlignment="Center" Height="35" Width="150">
                 <MenuItem Header="Payment" HorizontalAlignment="Left" FontFamily="Century Gothic" FontSize="12" FontWeight="SemiBold" BorderThickness="2" Foreground="#FF191964" VerticalAlignment="Center" Height="35" Width="300" Click="MenuPayment_Click"/>
                 <MenuItem Header="Receipt" HorizontalAlignment="Left" FontFamily="Century Gothic" FontSize="12" FontWeight="SemiBold" BorderThickness="2" Foreground="#FF191964" VerticalAlignment="Center" Height="35" Width="300" Click="MenuReceipt_Click"/>
+                <Separator/>
+                <MenuItem Header="Payable" HorizontalAlignment="Left" FontFamily="Century Gothic" FontSize="12" FontWeight="SemiBold" BorderThickness="2" Foreground="#FF191964" VerticalAlignment="Center" Height="35" Width="300" Click="MenuPayable_Click"/>
+                <MenuItem Header="Receivable" HorizontalAlignment="Left" FontFamily="Century Gothic" FontSize="12" FontWeight="SemiBold" BorderThickness="2" Foreground="#FF191964" VerticalAlignment="Center" Height="35" Width="300" Click="MenuReceivable_Click"/>
+                <Separator/>
+                <MenuItem Header="Account Transfer" HorizontalAlignment="Left" FontFamily="Century Gothic" FontSize="12" FontWeight="SemiBold" BorderThickness="2" Foreground="#FF191964" VerticalAlignment="Center" Height="35" Width="300" Click="MenuAccountTransfer_Click"/>
             </MenuItem>
             
             <MenuItem Header="Reports" FontFamily="Century Gothic" FontSize="12" FontWeight="SemiBold" BorderThickness="2" Background="#FFAAD7F0" Foreground="#FF191964" VerticalAlignment="Center" Height="35" Width="150">

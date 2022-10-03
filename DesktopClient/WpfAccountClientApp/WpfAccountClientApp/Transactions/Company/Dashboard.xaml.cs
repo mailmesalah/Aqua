@@ -130,5 +130,23 @@ namespace AquaClient.Transactions.Company
             IncomenExpense ie = new IncomenExpense();
             ie.Show();
         }
+
+        private void MenuAccountTransfer_Click(object sender, RoutedEventArgs e)
+        {
+            AccountTransfer at = new AccountTransfer();
+            at.Show();
+        }
+
+        private void MenuReceivable_Click(object sender, RoutedEventArgs e)
+        {
+            Receivable r = new Receivable();
+            r.Show();            
+        }
+
+        private void MenuPayable_Click(object sender, RoutedEventArgs e)
+        {
+            Payable p = new Payable();
+            p.Show();
+        }
     }
 }

@@ -157,6 +157,15 @@
     <Compile Include="Settings\Company\DefaultValueSettings.xaml.cs">
       <DependentUpon>DefaultValueSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Transactions\Company\AccountTransfer.xaml.cs">
+      <DependentUpon>AccountTransfer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Company\Payable.xaml.cs">
+      <DependentUpon>Payable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Company\Receivable.xaml.cs">
+      <DependentUpon>Receivable.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Transactions\Company\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
@@ -203,6 +212,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Settings\Company\DefaultValueSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Transactions\Company\AccountTransfer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Transactions\Company\Payable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Transactions\Company\Receivable.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

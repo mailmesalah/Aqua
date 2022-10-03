@@ -1,0 +1,77 @@
+﻿<Window x:Class="ThreeDigitClient.Transactions.Company.Receivable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ThreeDigitClient.Transactions.Company"
+        mc:Ignorable="d"
+        Title="Credit Receipt" Height="537.659" Width="823.91" WindowStartupLocation="CenterScreen" FontFamily="Century Gothic" FontWeight="Bold">
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="DodgerBlue" Offset="1"/>
+                <GradientStop Color="#FF9FD5EE"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Label Grid.Row="0" Content="Bill No" HorizontalAlignment="Left" Height="30" Margin="22,19,0,0" VerticalAlignment="Top" Width="56" FontFamily="Century Gothic" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" FontSize="14"/>
+        <TextBox Grid.Row="0" x:Name="txtBillNo" HorizontalAlignment="Left" Height="30" Margin="162,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" FontFamily="Century Gothic" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFE6E6E6" BorderThickness="2" MaxLength="15" PreviewKeyDown="txtBillNo_PreviewKeyDown"/>
+        <DatePicker Grid.Row="0" x:Name="dtpDate" HorizontalAlignment="Left" Height="30" Margin="277,19,0,0" VerticalAlignment="Top" Width="161"/>
+        <Button Grid.Row="0" x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Height="30" Margin="443,19,0,0" VerticalAlignment="Top" Width="120" FontWeight="Bold" BorderThickness="2" Click="btnDelete_Click"/>
+        <Button Grid.Row="0" x:Name="btnNewBill" Content="New Bill" HorizontalAlignment="Left" Height="31" Margin="678,19,0,0" VerticalAlignment="Top" Width="120" FontWeight="Bold" BorderThickness="2" Click="btnNewBill_Click"/>
+        <Label Grid.Row="0" Content="Credit Account" HorizontalAlignment="Left" Height="30" Margin="22,57,0,0" VerticalAlignment="Top" Width="123" FontFamily="Century Gothic" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" FontSize="14"/>
+        <ComboBox Grid.Row="0" x:Name="cmbCreditAccount" Style="{DynamicResource ComboBoxAquaStyle}" Height="30" Margin="162,57,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFE6E6E6" BorderThickness="2"  IsEditable="True" HorizontalAlignment="Left" Width="339" KeyUp="cmbCreditAccount_KeyUp">
+            <ComboBox.Resources>
+                <Style TargetType="{x:Type ComboBoxItem}">
+                    <Setter Property="Background" Value="#FFE6E6E6"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding UserType}" Value="1">
+                            <Setter Property="Foreground" Value="Red" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding UserType}" Value="2">
+                            <Setter Property="Foreground" Value="Green" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding UserType}" Value="3">
+                            <Setter Property="Foreground" Value="Blue" />
+                            <Setter Property="FontStyle" Value="Italic" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.Resources>
+        </ComboBox>
+
+        <Label Grid.Row="2" Content="Paid to (Monetary Account)" HorizontalAlignment="Left" Height="30" Margin="22,16,0,0" VerticalAlignment="Top" Width="197" FontFamily="Century Gothic" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" FontSize="14"/>
+        <ComboBox Grid.Row="2" x:Name="cmbMonetaryAccount" Style="{DynamicResource ComboBoxAquaStyle}" HorizontalAlignment="Left" Height="30" Margin="224,16,0,0" VerticalAlignment="Top" Width="277" FontFamily="Century Gothic" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFE6E6E6" BorderThickness="2" IsEditable="True" KeyUp="cmbMonetaryAccount_KeyUp">
+            <ComboBox.Resources>
+                <Style TargetType="{x:Type ComboBoxItem}">
+                    <Setter Property="Background" Value="#FFE6E6E6"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding UserType}" Value="1">
+                            <Setter Property="Foreground" Value="Red" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding UserType}" Value="2">
+                            <Setter Property="Foreground" Value="Green" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding UserType}" Value="3">
+                            <Setter Property="Foreground" Value="Blue" />
+                            <Setter Property="FontStyle" Value="Italic" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.Resources>
+        </ComboBox>
+        <TextBox Grid.Row="2" x:Name="txtAmountReceived" HorizontalAlignment="Left" Height="30" Margin="501,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontFamily="Century Gothic" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFE6E6E6" BorderThickness="2" MaxLength="15" />
+
+        <Label Grid.Row="2" Content="Notes" HorizontalAlignment="Left" Height="30" Margin="22,46.4,0,0" VerticalAlignment="Top" Width="197" FontFamily="Century Gothic" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" FontSize="14"/>
+        <TextBox Grid.Row="2" x:Name="txtNarration" HorizontalAlignment="Left" Height="30" Margin="224,46.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" FontFamily="Century Gothic" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFE6E6E6" BorderThickness="2" MaxLength="15" />
+
+        <Button Grid.Row="2" x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Height="30" Margin="547,80,0,0" VerticalAlignment="Top" Width="120" FontWeight="Bold" BorderThickness="2" Click="btnSave_Click"/>
+        <Button Grid.Row="2" x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="30" Margin="678,80,0,0" VerticalAlignment="Top" Width="120" FontFamily="Century Gothic" FontWeight="Bold" IsCancel="True" BorderThickness="2"  Click="btnCancel_Click"/>
+
+    </Grid>
+</Window>
