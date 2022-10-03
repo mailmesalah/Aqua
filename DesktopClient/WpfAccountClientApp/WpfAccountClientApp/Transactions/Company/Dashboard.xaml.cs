@@ -47,13 +47,13 @@ namespace AquaClient.Transactions.Company
             }
         }
 
-        private void MenuAdmins_Click(object sender, RoutedEventArgs e)
+        private void MenuUsers_Click(object sender, RoutedEventArgs e)
         {
             Users ur = new Users();
             ur.ShowDialog();
         }
 
-        private void MenuDealers_Click(object sender, RoutedEventArgs e)
+        private void MenuAccounts_Click(object sender, RoutedEventArgs e)
         {
             Accounts dr = new Accounts();
             dr.ShowDialog();
@@ -82,10 +82,6 @@ namespace AquaClient.Transactions.Company
             this.Close();
         }
 
-        private void MenuTicketLimits_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
         private void MenuOptimizor_Click(object sender, RoutedEventArgs e)
         {
@@ -99,18 +95,6 @@ namespace AquaClient.Transactions.Company
             sm.Show();
         }
 
-        private void MenuUsers_Click(object sender, RoutedEventArgs e)
-        {
-            Users u = new Users();
-            u.Show();
-        }
-
-        private void MenuAccounts_Click(object sender, RoutedEventArgs e)
-        {
-            Accounts a = new Accounts();
-            a.Show();
-        }
-
         private void MenuPayment_Click(object sender, RoutedEventArgs e)
         {
             Payment p = new Payment();
@@ -121,48 +105,6 @@ namespace AquaClient.Transactions.Company
         {
             Receipt r = new Receipt();
             r.Show();
-        }
-
-        private void MenuReceivable_Click(object sender, RoutedEventArgs e)
-        {
-            Receivable r = new Receivable();
-            r.Show();
-        }
-
-        private void MenuPayable_Click(object sender, RoutedEventArgs e)
-        {
-            Payable p = new Payable();
-            p.Show();
-        }
-
-        private void MenuAccountTransfer_Click(object sender, RoutedEventArgs e)
-        {
-            AccountTransfer at = new AccountTransfer();
-            at.Show();
-        }
-
-        private void MenuPurchase_Click(object sender, RoutedEventArgs e)
-        {
-            Purchase p = new Purchase();
-            p.Show();
-        }
-
-        private void MenuSales_Click(object sender, RoutedEventArgs e)
-        {
-            Sales s = new Sales();
-            s.Show();
-        }
-
-        private void MenuAppreciation_Click(object sender, RoutedEventArgs e)
-        {
-            Appreciation a = new Appreciation();
-            a.Show();
-        }
-
-        private void MenuDepreciation_Click(object sender, RoutedEventArgs e)
-        {
-            Depreciation d = new Depreciation();
-            d.Show();
         }
 
         private void MenuDayBook_Click(object sender, RoutedEventArgs e)
@@ -187,18 +129,6 @@ namespace AquaClient.Transactions.Company
         {
             IncomenExpense ie = new IncomenExpense();
             ie.Show();
-        }
-
-        private void MenuCreditPayment_Click(object sender, RoutedEventArgs e)
-        {
-            CreditPayment cp = new CreditPayment();
-            cp.Show();
-        }
-
-        private void MenuCreditReceipt_Click(object sender, RoutedEventArgs e)
-        {
-            CreditReceipt cr = new CreditReceipt();
-            cr.Show();
         }
     }
 }

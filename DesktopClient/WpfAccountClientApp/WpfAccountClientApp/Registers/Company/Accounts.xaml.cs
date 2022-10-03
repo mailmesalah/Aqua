@@ -26,8 +26,7 @@ namespace AquaClient.Registers.Company
         private ObservableCollection<TreeViewItem> mAccountsTreeContents = new ObservableCollection<TreeViewItem>();
         private CAccount mCurrentAccount;
         private ObservableCollection<CAccount> mMonetaryParentGroups = new ObservableCollection<CAccount>();
-        private ObservableCollection<CAccount> mPersonalParentGroups = new ObservableCollection<CAccount>();
-        private ObservableCollection<CAccount> mStockParentGroups = new ObservableCollection<CAccount>();
+        private ObservableCollection<CAccount> mPersonalParentGroups = new ObservableCollection<CAccount>();        
         private ObservableCollection<CAccount> mCreditParentGroups = new ObservableCollection<CAccount>();
 
         BasicHttpBinding bhttb = new BasicHttpBinding()
@@ -49,8 +48,7 @@ namespace AquaClient.Registers.Company
             cmbAccountType.Items.Add("Account");
 
             cmbMainGroup.Items.Add("Monetary Accounts");
-            cmbMainGroup.Items.Add("Personal Accounts");
-            cmbMainGroup.Items.Add("Stock Accounts");
+            cmbMainGroup.Items.Add("Personal Accounts");            
             cmbMainGroup.Items.Add("Credit Accounts");
 
             NewAccountForm();
@@ -80,20 +78,16 @@ namespace AquaClient.Registers.Company
             
             ObservableCollection<TreeViewItem> treeContents = new ObservableCollection<TreeViewItem>();
             TreeViewItem monetaryGroup = new TreeViewItem();
-            TreeViewItem personalGroup = new TreeViewItem();
-            TreeViewItem stockGroup = new TreeViewItem();
+            TreeViewItem personalGroup = new TreeViewItem();            
             TreeViewItem creditGroup = new TreeViewItem();
             monetaryGroup.Header = "Monetary Accounts (Company)";
             monetaryGroup.Foreground = Brushes.DarkBlue;
             personalGroup.Header = "Personal Accounts";
             personalGroup.Foreground = Brushes.DarkBlue;
-            stockGroup.Header = "Stock Accounts";
-            stockGroup.Foreground = Brushes.DarkBlue;
             creditGroup.Header = "Credit Accounts";
             creditGroup.Foreground = Brushes.DarkBlue;
             mMonetaryParentGroups.Clear();
-            mPersonalParentGroups.Clear();
-            mStockParentGroups.Clear();
+            mPersonalParentGroups.Clear();            
             mCreditParentGroups.Clear();
             //Monetary Account
             foreach (var groupAccount in Accounts.Where(e => e.AccountType == CAccount.GROUP && e.MainGroup == CAccount.MONETARY_ACCOUNT).OrderBy(e => e.Name))
@@ -147,32 +141,7 @@ namespace AquaClient.Registers.Company
 
                 mPersonalParentGroups.Add(groupAccount);
             }
-            //Stock Account
-            foreach (var groupAccount in Accounts.Where(e => e.AccountType == CAccount.GROUP && e.MainGroup == CAccount.STOCK_ACCOUNT).OrderBy(e => e.Name))
-            {
-                TreeViewItem aTItem = new TreeViewItem();
-                foreach (var subDealer in Accounts.Where(e => e.AccountType == CAccount.ACCOUNT && e.ParentGroupId == groupAccount.Id).OrderBy(e => e.Name))
-                {
-                    TreeViewItem bTItem = new TreeViewItem();
-
-
-                    bTItem.Header = subDealer.Name;
-                    bTItem.Foreground = Brushes.Blue;
-                    bTItem.Tag = subDealer;
-                    aTItem.Items.Add(bTItem);
-
-                    bTItem.MouseLeftButtonUp += TreeAccountItem_MouseLeftButtonUp;
-                }
-
-                aTItem.Header = groupAccount.Name;
-                aTItem.Foreground = Brushes.DarkGreen;
-                aTItem.Tag = groupAccount;
-                stockGroup.Items.Add(aTItem);
-
-                aTItem.MouseLeftButtonUp += TreeAccountItem_MouseLeftButtonUp;
-
-                mStockParentGroups.Add(groupAccount);
-            }
+            
             //Credit Account
             foreach (var groupAccount in Accounts.Where(e => e.AccountType == CAccount.GROUP && e.MainGroup == CAccount.CREDIT_ACCOUNT).OrderBy(e => e.Name))
             {
@@ -200,8 +169,7 @@ namespace AquaClient.Registers.Company
                 mCreditParentGroups.Add(groupAccount);
             }
             treeContents.Add(monetaryGroup);
-            treeContents.Add(personalGroup);
-            treeContents.Add(stockGroup);
+            treeContents.Add(personalGroup);            
             treeContents.Add(creditGroup);
 
             cmbParentGroup.SelectedIndex = -1;
@@ -480,10 +448,6 @@ namespace AquaClient.Registers.Company
                 else if (cmbMainGroup.SelectedIndex == CAccount.PERSONAL_ACCOUNT)
                 {
                     cmbParentGroup.ItemsSource = mPersonalParentGroups;
-                }
-                else if (cmbMainGroup.SelectedIndex == CAccount.STOCK_ACCOUNT)
-                {
-                    cmbParentGroup.ItemsSource = mStockParentGroups;
                 }
                 else if (cmbMainGroup.SelectedIndex == CAccount.CREDIT_ACCOUNT)
                 {

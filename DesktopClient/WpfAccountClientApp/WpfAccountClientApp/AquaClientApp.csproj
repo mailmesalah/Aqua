@@ -157,35 +157,8 @@
     <Compile Include="Settings\Company\DefaultValueSettings.xaml.cs">
       <DependentUpon>DefaultValueSettings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Transactions\Company\Depreciation.xaml.cs">
-      <DependentUpon>Depreciation.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Transactions\Company\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Transactions\Company\AccountTransfer.xaml.cs">
-      <DependentUpon>AccountTransfer.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Transactions\Company\Appreciation.xaml.cs">
-      <DependentUpon>Appreciation.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Transactions\Company\Payable.xaml.cs">
-      <DependentUpon>Payable.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Transactions\Company\CreditPayment.xaml.cs">
-      <DependentUpon>CreditPayment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Transactions\Company\CreditReceipt.xaml.cs">
-      <DependentUpon>CreditReceipt.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Transactions\Company\Sales.xaml.cs">
-      <DependentUpon>Sales.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Transactions\Company\Purchase.xaml.cs">
-      <DependentUpon>Purchase.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Transactions\Company\Receivable.xaml.cs">
-      <DependentUpon>Receivable.xaml</DependentUpon>
     </Compile>
     <Compile Include="Transactions\Company\Receipt.xaml.cs">
       <DependentUpon>Receipt.xaml</DependentUpon>
@@ -233,45 +206,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Transactions\Company\Depreciation.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Transactions\Company\Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Transactions\Company\AccountTransfer.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Transactions\Company\Appreciation.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Transactions\Company\Payable.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Transactions\Company\CreditPayment.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Transactions\Company\CreditReceipt.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Transactions\Company\Sales.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Transactions\Company\Purchase.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Transactions\Company\Receivable.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Transactions\Company\Receipt.xaml">
       <Generator>MSBuild:Compile</Generator>
