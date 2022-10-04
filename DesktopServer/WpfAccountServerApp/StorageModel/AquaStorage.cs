@@ -12,7 +12,8 @@ namespace AquaServer.StorageModel
         {
 
             //Database.SetInitializer<AquaStorage>(new DropCreateDatabaseAlways<AquaStorage>());
-            Database.SetInitializer<AquaStorage>(new DropCreateDatabaseIfModelChanges<AquaStorage>());
+            //Database.SetInitializer<AquaStorage>(new DropCreateDatabaseIfModelChanges<AquaStorage>());
+            Database.SetInitializer<AquaStorage>(new CreateDatabaseIfNotExists<AquaStorage>());
         }
 
         public DbSet<Company> Companies { get; set; }

@@ -34,9 +34,8 @@ namespace ServerServiceInterface
     {
         //Account Group
         public const int MONETARY_ACCOUNT = 0;
-        public const int PERSONAL_ACCOUNT = 1;
-        public const int STOCK_ACCOUNT = 2;
-        public const int CREDIT_ACCOUNT = 3;
+        public const int PERSONAL_ACCOUNT = 1;        
+        public const int CREDIT_ACCOUNT = 2;
         //Account Type
         public const int GROUP = 0;
         public const int ACCOUNT = 1;

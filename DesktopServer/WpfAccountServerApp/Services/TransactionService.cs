@@ -514,18 +514,7 @@ namespace AquaServer.Services
                             //new MySqlParameter("@mainGroup", mainGroup),
                             new MySqlParameter("@parentGroupId", parentGroupId),
                             new MySqlParameter("@billType", billType),
-                            new MySqlParameter("@accountId", accountId)).Where(e => e.Amount > 0).ToList());
-
-                        //Stock Accounts
-                        assets.AddRange(dataB.Database.SqlQuery<CAnLReportItem>("Select TS.AccountName, TS.MainGroup, TS.ParentGroupId, (Sum(TS.Debit)-Sum(TS.Credit))As Amount From Transactions TS Where(Date(TS.BillDate) >= @startD && Date(TS.BillDate) <=@endD) && (TS.MainGroup=" + CAccount.STOCK_ACCOUNT + ") " + subQ + " Group By TS.AccountId, TS.AccountName, TS.MainGroup, TS.ParentGroupId Order By TS.MainGroup, TS.AccountName",
-                            new MySqlParameter("@startD", fromDate),
-                            new MySqlParameter("@endD", toDate),
-                            new MySqlParameter("@billNo", billNo),
-                            new MySqlParameter("@companyId", companyId),
-                            //new MySqlParameter("@mainGroup", mainGroup),
-                            new MySqlParameter("@parentGroupId", parentGroupId),
-                            new MySqlParameter("@billType", billType),
-                            new MySqlParameter("@accountId", accountId)).ToList());
+                            new MySqlParameter("@accountId", accountId)).Where(e => e.Amount > 0).ToList());                        
 
                         //Monetary Accounts
                         liabilities = dataB.Database.SqlQuery<CAnLReportItem>("Select TS.AccountName, TS.MainGroup, TS.ParentGroupId, (Sum(TS.Credit)-Sum(TS.Debit))As Amount From Transactions TS Where(Date(TS.BillDate) >= @startD && Date(TS.BillDate) <=@endD) && (TS.MainGroup=" + CAccount.MONETARY_ACCOUNT + ") " + subQ + " Group By TS.AccountId, TS.AccountName, TS.MainGroup, TS.ParentGroupId Order By TS.MainGroup, TS.AccountName",

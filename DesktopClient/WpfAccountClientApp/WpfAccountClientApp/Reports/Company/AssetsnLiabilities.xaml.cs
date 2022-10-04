@@ -43,14 +43,9 @@ namespace AquaClient.Reports.Company
             cmbBillType.Items.Add("Payable");
             cmbBillType.Items.Add("Receivable");
             cmbBillType.Items.Add("Account Transfer");
-            cmbBillType.Items.Add("Purchase");
-            cmbBillType.Items.Add("Sales");
-            cmbBillType.Items.Add("Appreciation");
-            cmbBillType.Items.Add("Depreciation");
 
             cmbMainGroup.Items.Add("Monetary");
             cmbMainGroup.Items.Add("Personal");
-            cmbMainGroup.Items.Add("Stock");
             cmbMainGroup.Items.Add("Credit");
 
             GetParentAccountsForCombo();
@@ -82,10 +77,6 @@ namespace AquaClient.Reports.Company
                         accounts = accountService.ReadAllParentGroupsUnderMainGroup(CAccount.PERSONAL_ACCOUNT, ApplicationStaticVariables.gClientLocalInfo.CompanyId, ApplicationStaticVariables.gClientLocalInfo.SessionId);
                     }
                     else if (cmbMainGroup.SelectedIndex == 2)
-                    {
-                        accounts = accountService.ReadAllParentGroupsUnderMainGroup(CAccount.STOCK_ACCOUNT, ApplicationStaticVariables.gClientLocalInfo.CompanyId, ApplicationStaticVariables.gClientLocalInfo.SessionId);
-                    }
-                    else if (cmbMainGroup.SelectedIndex == 3)
                     {
                         accounts = accountService.ReadAllParentGroupsUnderMainGroup(CAccount.CREDIT_ACCOUNT, ApplicationStaticVariables.gClientLocalInfo.CompanyId, ApplicationStaticVariables.gClientLocalInfo.SessionId);
                     }                    
@@ -119,10 +110,6 @@ namespace AquaClient.Reports.Company
                         else if (cmbMainGroup.SelectedIndex == 1)
                         {
                             accounts = accountService.ReadAllAccountsUnderMainGroup(CAccount.PERSONAL_ACCOUNT, ApplicationStaticVariables.gClientLocalInfo.CompanyId, ApplicationStaticVariables.gClientLocalInfo.SessionId);
-                        }
-                        else if (cmbMainGroup.SelectedIndex == 2)
-                        {
-                            accounts = accountService.ReadAllAccountsUnderMainGroup(CAccount.STOCK_ACCOUNT, ApplicationStaticVariables.gClientLocalInfo.CompanyId, ApplicationStaticVariables.gClientLocalInfo.SessionId);
                         }
                         else if (cmbMainGroup.SelectedIndex == 3)
                         {

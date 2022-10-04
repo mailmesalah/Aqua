@@ -40,22 +40,15 @@ namespace AquaClient.Reports.Company
         private void LoadInitialDetails()
         {
             grdReport.ItemsSource = mGridContent;
-            
-            cmbBillType.Items.Add("Personal Payment");
-            cmbBillType.Items.Add("Personal Receipt");
-            cmbBillType.Items.Add("Credit Payment");
-            cmbBillType.Items.Add("Credit Receipt");
+
+            cmbBillType.Items.Add("Payment");
+            cmbBillType.Items.Add("Receipt");
             cmbBillType.Items.Add("Payable");
             cmbBillType.Items.Add("Receivable");
             cmbBillType.Items.Add("Account Transfer");
-            cmbBillType.Items.Add("Purchase");
-            cmbBillType.Items.Add("Sales");
-            cmbBillType.Items.Add("Appreciation");
-            cmbBillType.Items.Add("Depreciation");
 
             cmbMainGroup.Items.Add("Monetary");
             cmbMainGroup.Items.Add("Personal");
-            cmbMainGroup.Items.Add("Stock");
             cmbMainGroup.Items.Add("Credit");
 
             GetParentAccountsForCombo();
@@ -87,10 +80,6 @@ namespace AquaClient.Reports.Company
                         accounts = accountService.ReadAllParentGroupsUnderMainGroup(CAccount.PERSONAL_ACCOUNT, ApplicationStaticVariables.gClientLocalInfo.CompanyId, ApplicationStaticVariables.gClientLocalInfo.SessionId);
                     }
                     else if (cmbMainGroup.SelectedIndex == 2)
-                    {
-                        accounts = accountService.ReadAllParentGroupsUnderMainGroup(CAccount.STOCK_ACCOUNT, ApplicationStaticVariables.gClientLocalInfo.CompanyId, ApplicationStaticVariables.gClientLocalInfo.SessionId);
-                    }
-                    else if (cmbMainGroup.SelectedIndex == 3)
                     {
                         accounts = accountService.ReadAllParentGroupsUnderMainGroup(CAccount.CREDIT_ACCOUNT, ApplicationStaticVariables.gClientLocalInfo.CompanyId, ApplicationStaticVariables.gClientLocalInfo.SessionId);
                     }                    
@@ -126,10 +115,6 @@ namespace AquaClient.Reports.Company
                             accounts = accountService.ReadAllAccountsUnderMainGroup(CAccount.PERSONAL_ACCOUNT, ApplicationStaticVariables.gClientLocalInfo.CompanyId, ApplicationStaticVariables.gClientLocalInfo.SessionId);
                         }
                         else if (cmbMainGroup.SelectedIndex == 2)
-                        {
-                            accounts = accountService.ReadAllAccountsUnderMainGroup(CAccount.STOCK_ACCOUNT, ApplicationStaticVariables.gClientLocalInfo.CompanyId, ApplicationStaticVariables.gClientLocalInfo.SessionId);
-                        }
-                        else if (cmbMainGroup.SelectedIndex == 3)
                         {
                             accounts = accountService.ReadAllAccountsUnderMainGroup(CAccount.CREDIT_ACCOUNT, ApplicationStaticVariables.gClientLocalInfo.CompanyId, ApplicationStaticVariables.gClientLocalInfo.SessionId);
                         }
@@ -196,27 +181,15 @@ namespace AquaClient.Reports.Company
             switch (billType)
             {
                 case CBillTypes.PERSONAL_PAYMENT:
-                    return "Personal Payment";
+                    return "Payment";
                 case CBillTypes.PERSONAL_RECEIPT:
-                    return "Personal Receipt";                
-                case CBillTypes.CREDIT_PAYMENT:
-                    return "Credit Payment";
-                case CBillTypes.CREDIT_RECEIPT:
-                    return "Credit Receipt";
+                    return "Receipt";                
                 case CBillTypes.PAYABLE:
                     return "Payable";
                 case CBillTypes.RECEIVABLE:
                     return "Receivable";
-                case CBillTypes.PURCHASE:
-                    return "Purchase";
-                case CBillTypes.SALES:
-                    return "Sales";
                 case CBillTypes.ACCOUNT_TRANSFER:
                     return "Account Transfer";
-                case CBillTypes.APPRECIATION:
-                    return "Appreciation";
-                case CBillTypes.DEPRECIATION:
-                    return "Depreciation";
             }
             return "";
         }
@@ -291,31 +264,13 @@ namespace AquaClient.Reports.Company
                             billType = CBillTypes.PERSONAL_RECEIPT;
                             break;
                         case 2:
-                            billType = CBillTypes.CREDIT_PAYMENT;
-                            break;
-                        case 3:
-                            billType = CBillTypes.CREDIT_RECEIPT;
-                            break;
-                        case 4:
                             billType = CBillTypes.PAYABLE;
                             break;
-                        case 5:
+                        case 3:
                             billType = CBillTypes.RECEIVABLE;
                             break;
-                        case 6:
+                        case 4:
                             billType = CBillTypes.ACCOUNT_TRANSFER;
-                            break;
-                        case 7:
-                            billType = CBillTypes.PURCHASE;
-                            break;
-                        case 8:
-                            billType = CBillTypes.SALES;
-                            break;
-                        case 9:
-                            billType = CBillTypes.APPRECIATION;
-                            break;
-                        case 10:
-                            billType = CBillTypes.DEPRECIATION;
                             break;
 
                     }                    
@@ -403,18 +358,6 @@ namespace AquaClient.Reports.Company
                                 break;
                             case 4:
                                 billType = CBillTypes.ACCOUNT_TRANSFER;
-                                break;
-                            case 5:
-                                billType = CBillTypes.PURCHASE;
-                                break;
-                            case 6:
-                                billType = CBillTypes.SALES;
-                                break;
-                            case 7:
-                                billType = CBillTypes.APPRECIATION;
-                                break;
-                            case 8:
-                                billType = CBillTypes.DEPRECIATION;
                                 break;
 
                         }

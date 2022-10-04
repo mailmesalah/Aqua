@@ -66,10 +66,6 @@ namespace AquaServer.Services
             {
                 lock (@billNoLock)
                 {
-                    /*Add Daya code for bill no generation in next update
-                    SettingsService ss = new SettingsService();
-                    long dayCode = ss.GetDayCode(companyId);
-                    */
 
                     using (var dataB = new AquaStorage())
                     {
